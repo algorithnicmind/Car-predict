@@ -196,6 +196,13 @@
                 const target = document.querySelector(href);
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth' });
+                    // Auto-focus first input if targeting predictor
+                    if (href === '#predictor') {
+                        setTimeout(() => {
+                            const firstInput = document.getElementById('vehicle_age');
+                            if (firstInput) firstInput.focus();
+                        }, 500);
+                    }
                 }
 
                 // Update active state
