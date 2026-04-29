@@ -33,13 +33,6 @@ Desktop.ini
 ._*
 
 # ===== ML / Data Science =====
-# Trained models
-*.pkl
-*.joblib
-*.h5
-*.pt
-*.pth
-
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
