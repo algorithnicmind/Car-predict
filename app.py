@@ -32,14 +32,24 @@ app = Flask(
 MODEL_PATH    = os.path.join(os.path.dirname(__file__), 'model.pkl')
 METADATA_PATH = os.path.join(os.path.dirname(__file__), 'model_metadata.json')
 
+if not os.path.exists(MODEL_PATH) or not os.path.exists(METADATA_PATH):
+    print("\n[ERROR] Model files not found!")
+    print("   Run 'python train_model.py' first to train and save the model.")
+    print(f"   Expected: {MODEL_PATH}")
+    print(f"   Expected: {METADATA_PATH}")
+    exit(1)
+
 model    = joblib.load(MODEL_PATH)
-metadata = json.load(open(METADATA_PATH, 'r'))
+with open(METADATA_PATH, 'r') as f:
+    metadata = json.load(f)
 
 MODEL_COLUMNS           = metadata['model_columns']
 NUMERICAL_FEATURES      = metadata['numerical_features']
 CATEGORICAL_FEATURES    = metadata['categorical_features']   # dict: col -> [values]
 FEATURE_STATS           = metadata['feature_stats']
 MODEL_METRICS           = metadata['model_metrics']
+
+print(f"[OK] Model loaded (R2: {MODEL_METRICS['r2_percentage']}%)")
 
 
 # ------------------------------------------------------------------
