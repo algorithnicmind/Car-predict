@@ -41,6 +41,29 @@
         errorContainer.classList.remove('show');
     }
 
+    function animatePrice(targetValue) {
+        const duration = 1200;
+        const startTime = performance.now();
+        const startValue = 0;
+
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            // Ease-out cubic
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const currentValue = startValue + (targetValue - startValue) * eased;
+
+            resultPrice.textContent = formatCurrency(currentValue);
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            }
+        }
+
+        requestAnimationFrame(update);
+    }
+
     // ── Load Metadata ──
     async function loadMetadata() {
         try {
@@ -116,9 +139,9 @@
                 throw new Error(data.error || 'Prediction failed');
             }
 
-            // Show result with animation
-            resultPrice.textContent = formatCurrency(data.predicted_price);
+            // Show result with animated counter
             resultContainer.classList.add('show');
+            animatePrice(data.predicted_price);
 
             // Scroll to result
             resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
