@@ -20,7 +20,7 @@ def process_and_retrain():
 
     # 1. Read new user data
     user_df = pd.read_csv(user_data_path)
-    if user_df.empty:
+    if user_df.empty or len(user_df) < 1:
         print("[INFO] No new user data to process.")
         return
 
@@ -32,10 +32,9 @@ def process_and_retrain():
     combined_df.to_csv(car_data_path, index=False)
     print(f"[OK] Main dataset updated: {len(combined_df):,} rows.")
 
-    # 3. Retrain Model (Simplified version of train_model.py logic)
+    # 3. Retrain Model
     print("\n[STEP] Starting retraining...")
     
-    # Cleaning (same as train_model.py)
     df = combined_df.copy()
     irrelevant = ['Unnamed: 0', 'car_name', 'brand', 'model']
     df = df.drop(columns=[c for c in irrelevant if c in df.columns], errors='ignore')
@@ -48,14 +47,19 @@ def process_and_retrain():
     X = df[numerical_features + categorical_features]
     y = df[target]
     
-    # Preprocessing
     X_encoded = pd.get_dummies(X, columns=categorical_features, drop_first=True)
     
-    # Train
-    model = RandomForestRegressor(n_estimators=100, random_state=42)
+    # Train with SAFE hyperparameters to keep file size under 100MB
+    model = RandomForestRegressor(
+        n_estimators=100,
+        max_depth=15,
+        min_samples_split=5,
+        min_samples_leaf=2,
+        random_state=42,
+        n_jobs=-1
+    )
     model.fit(X_encoded, y)
     
-    # Evaluate
     y_pred = model.predict(X_encoded)
     r2 = r2_score(y, y_pred)
     print(f"[OK] Retraining complete. New R2 Score: {r2*100:.2f}%")
@@ -63,7 +67,6 @@ def process_and_retrain():
     # 4. Save artifacts
     joblib.dump(model, 'model.pkl')
     
-    # Update metadata columns in case categories changed
     with open('model_metadata.json', 'r') as f:
         metadata = json.load(f)
     
@@ -75,7 +78,7 @@ def process_and_retrain():
     
     print("[OK] Model and metadata updated.")
 
-    # 5. Reset user_data.csv (keep only headers)
+    # 5. Reset user_data.csv
     with open(user_data_path, 'r') as f:
         headers = f.readline()
     with open(user_data_path, 'w') as f:

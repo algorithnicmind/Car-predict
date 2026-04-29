@@ -23,6 +23,15 @@ ENV/
 *~
 
 # ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== Dataset & Logs =====
+car_data.csv
+user_data.csv
+training_done.txt
+
+
 # Windows
 Thumbs.db
 ehthumbs.db
