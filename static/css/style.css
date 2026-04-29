@@ -678,6 +678,14 @@ img {
     letter-spacing: 0.06em;
 }
 
+.result-price-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
 .result-price {
     font-size: clamp(2.2rem, 5vw, 3.5rem);
     font-weight: 900;
@@ -686,8 +694,37 @@ img {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 20px;
     line-height: 1.2;
+}
+
+.btn-copy {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.btn-copy:hover {
+    background: rgba(108, 92, 231, 0.15);
+    color: var(--accent-1);
+    border-color: rgba(108, 92, 231, 0.3);
+}
+
+.btn-copy:active {
+    transform: scale(0.9);
+}
+
+.btn-copy.copied {
+    background: rgba(0, 206, 201, 0.15);
+    color: var(--accent-2);
+    border-color: rgba(0, 206, 201, 0.3);
 }
 
 .result-note {
