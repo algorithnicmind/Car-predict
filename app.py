@@ -68,6 +68,12 @@ def page_not_found(e):
     return render_template('404.html'), 404
 
 
+@app.errorhandler(500)
+def internal_server_error(e):
+    """Return JSON error for internal server errors."""
+    return jsonify({'error': 'Internal server error occurred.'}), 500
+
+
 @app.route('/api/health', methods=['GET'])
 def health_check():
     """Health check endpoint for monitoring and deployment."""
