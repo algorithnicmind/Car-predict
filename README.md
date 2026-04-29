@@ -10,8 +10,8 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=400&size=18&duration=4000&pause=800&color=A78BFA&center=true&vCenter=true&repeat=true&width=700&height=30&lines=Linear+Regression+%E2%9A%94%EF%B8%8F+Random+Forest+%E2%80%94+Who+wins%3F;Predict+used+car+prices+with+ML+%F0%9F%A4%96;Built+with+Python+%2B+Scikit-Learn+%F0%9F%90%8D" alt="Typing SVG" />
 </p>
 
-
 <br/>
+
 
 <p align="center">
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/></a>
@@ -225,8 +225,8 @@ The Random Forest reveals which features matter most for pricing:
 
 > **Key Insight:** `vehicle_age` and `max_power` are the two most important predictors — together they explain a large portion of the price variance.
 
-
 </details>
+
 
 <br/>
 
@@ -328,8 +328,8 @@ Car-predict/
 
 <br/>
 
-
 ---
+
 
 ## 🛠️ Tech Stack
 
