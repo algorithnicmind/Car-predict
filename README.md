@@ -226,10 +226,10 @@ The Random Forest reveals which features matter most for pricing:
 
 </details>
 
-
 <br/>
 
 ---
+
 
 ## 🚀 Quick Start
 
@@ -329,8 +329,8 @@ Car-predict/
 
 ---
 
-
 ## 🛠️ Tech Stack
+
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=python,sklearn,github,vscode&theme=dark" alt="Tech Stack Icons" />
