@@ -561,6 +561,42 @@ img {
     from { transform: rotate(0deg); }
     to   { transform: rotate(360deg); }
 }
+/* ---------- Form Buttons ---------- */
+.form-buttons {
+    display: flex;
+    gap: 14px;
+}
+
+.form-buttons .btn-predict {
+    flex: 1;
+}
+
+.btn-reset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 18px 28px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-family: var(--font-main);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.btn-reset:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-primary);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-reset:active {
+    transform: scale(0.98);
+}
 
 
 /* ---------- Result Card ---------- */
