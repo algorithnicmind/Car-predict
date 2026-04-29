@@ -149,6 +149,53 @@ def predict():
         return jsonify({'error': str(e)}), 500
 
 
+@app.route('/api/contribute', methods=['POST'])
+def contribute_data():
+    """Accept new car data from the user and save it to user_data.csv."""
+    try:
+        data = request.get_json()
+        if not data:
+            return jsonify({'error': 'No data provided'}), 400
+
+        # Validation
+        required_numerical = NUMERICAL_FEATURES
+        required_categorical = list(CATEGORICAL_FEATURES.keys())
+        required_fields = required_numerical + required_categorical + ['selling_price']
+
+        row_data = {}
+        for field in required_fields:
+            if field not in data:
+                return jsonify({'error': f'Missing field: {field}'}), 400
+            row_data[field] = data[field]
+
+        # Prepare full CSV row
+        full_row = {
+            '': '', 
+            'car_name': data.get('car_name', 'User Contributed'),
+            'brand': data.get('brand', 'Unknown'),
+            'model': data.get('model', 'Unknown'),
+            'vehicle_age': row_data['vehicle_age'],
+            'km_driven': row_data['km_driven'],
+            'seller_type': row_data['seller_type'],
+            'fuel_type': row_data['fuel_type'],
+            'transmission_type': row_data['transmission_type'],
+            'mileage': row_data['mileage'],
+            'engine': row_data['engine'],
+            'max_power': row_data['max_power'],
+            'seats': row_data['seats'],
+            'selling_price': row_data['selling_price']
+        }
+
+        # Append to user_data.csv
+        contributed_df = pd.DataFrame([full_row])
+        contributed_df.to_csv('user_data.csv', mode='a', header=False, index=False)
+
+        return jsonify({'message': 'Data contributed successfully! Thank you for helping the AI get smarter.'}), 201
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
 # ------------------------------------------------------------------
 #  Run
 # ------------------------------------------------------------------
