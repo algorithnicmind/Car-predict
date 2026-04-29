@@ -101,8 +101,9 @@ all_features = numerical_features + categorical_features
 # Validate
 missing = [c for c in all_features + [target] if c not in df.columns]
 if missing:
-    print(f"❌ Missing columns: {missing}")
+    print(f"[ERROR] Missing columns: {missing}")
     exit()
+
 
 X = df[all_features].copy()
 y = df[target].copy()
@@ -231,29 +232,31 @@ print("=" * 70)
 
 
 comparison = pd.DataFrame([lr_metrics, rf_metrics])
-comparison['R² (%)'] = (comparison['R² Score'] * 100).round(2)
+comparison['R2 (%)'] = (comparison['R2 Score'] * 100).round(2)
 
 # Nice formatted table
 print(f"\n{'Metric':<30s} {'Linear Regression':>20s} {'Random Forest':>20s}")
 print("-" * 70)
 
-print(f"{'R² Score':<30s} {lr_metrics['R² Score']:>19.4f} {rf_metrics['R² Score']:>19.4f}")
-print(f"{'R² Percentage':<30s} {lr_metrics['R² Score']*100:>18.2f}% {rf_metrics['R² Score']*100:>18.2f}%")
-print(f"{'Mean Absolute Error (MAE)':<30s} {'₹{:,.0f}'.format(lr_metrics['MAE (₹)']):>20s} {'₹{:,.0f}'.format(rf_metrics['MAE (₹)']):>20s}")
-print(f"{'Root Mean Sq Error (RMSE)':<30s} {'₹{:,.0f}'.format(lr_metrics['RMSE (₹)']):>20s} {'₹{:,.0f}'.format(rf_metrics['RMSE (₹)']):>20s}")
+print(f"{'R2 Score':<30s} {lr_metrics['R2 Score']:>19.4f} {rf_metrics['R2 Score']:>19.4f}")
+print(f"{'R2 Percentage':<30s} {lr_metrics['R2 Score']*100:>18.2f}% {rf_metrics['R2 Score']*100:>18.2f}%")
+print(f"{'Mean Absolute Error (MAE)':<30s} {'${:,.0f}'.format(lr_metrics['MAE ($)']):>20s} {'${:,.0f}'.format(rf_metrics['MAE ($)']):>20s}")
+print(f"{'Root Mean Sq Error (RMSE)':<30s} {'${:,.0f}'.format(lr_metrics['RMSE ($)']):>20s} {'${:,.0f}'.format(rf_metrics['RMSE ($)']):>20s}")
 
 # Determine winner
-winner = 'Random Forest' if rf_metrics['R² Score'] > lr_metrics['R² Score'] else 'Linear Regression'
-improvement = abs(rf_metrics['R² Score'] - lr_metrics['R² Score']) * 100
+winner = 'Random Forest' if rf_metrics['R2 Score'] > lr_metrics['R2 Score'] else 'Linear Regression'
+improvement = abs(rf_metrics['R2 Score'] - lr_metrics['R2 Score']) * 100
 print(f"\nWinner: {winner}  (+{improvement:.2f}% improvement)")
 
 
 
-# ── Feature Importance (Random Forest) ──
+
+# -- Feature Importance (Random Forest) --
 print("\n" + "-" * 70)
 
-print("  🌲 Random Forest — Feature Importance (Top 10)")
+print("  Random Forest - Feature Importance (Top 10)")
 print("-" * 70)
+
 
 
 importances = pd.Series(rf_model.feature_importances_, index=X_train.columns)
@@ -265,11 +268,12 @@ for i, (feat, imp) in enumerate(importances.head(10).items(), 1):
     print(f"   {i:2d}. {feat:30s}  {imp:.4f}  {bar}")
 
 
-# ── Sample Predictions Side-by-Side ──
+# -- Sample Predictions Side-by-Side --
 print("\n" + "-" * 70)
 
-print("  Sample Predictions — First 10 Test Samples")
+print("  Sample Predictions - First 10 Test Samples")
 print("-" * 70)
+
 
 
 results = pd.DataFrame({
@@ -284,11 +288,12 @@ results.index = range(1, len(results) + 1)
 print(results.head(10).to_string())
 
 
-# ── Single Car Prediction Example ──
+# -- Single Car Prediction Example --
 print("\n" + "-" * 70)
 
-print("  🔮 Example: Single Car Price Prediction")
+print("  Example: Single Car Price Prediction")
 print("-" * 70)
+
 
 
 sample = X_test.iloc[0]
