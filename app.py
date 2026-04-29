@@ -14,6 +14,7 @@ import pandas as pd
 import numpy as np
 import joblib
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 
 # ------------------------------------------------------------------
 #  Initialise Flask
@@ -24,6 +25,7 @@ app = Flask(
     static_folder='static',
     template_folder='templates',
 )
+CORS(app)
 
 # ------------------------------------------------------------------
 #  Load model + metadata
