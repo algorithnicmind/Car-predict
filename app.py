@@ -64,6 +64,12 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/robots.txt')
+def static_from_root():
+    """Serve robots.txt at the root URL."""
+    return app.send_static_file('robots.txt')
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     """Render custom 404 page."""
