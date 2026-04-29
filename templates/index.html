@@ -234,6 +234,41 @@
             </div>
         </div>
     </section>
+    
+    <!-- ========== CONTRIBUTE SECTION ========== -->
+    <section class="section" id="contribute">
+        <div class="section-header">
+            <h2 class="section-title">Help Our AI <span class="gradient-text">Grow</span></h2>
+            <p class="section-desc">Know a car's real market price? Contribute your data to make our predictions more accurate for everyone.</p>
+        </div>
+        <div class="glass contribute-container">
+            <form id="contribute-form" class="form-grid">
+                <!-- Most fields will be cloned from the main form in JS or manually added here -->
+                <div class="input-group">
+                    <label for="c_vehicle_age">Vehicle Age (Years)</label>
+                    <input type="number" id="c_vehicle_age" name="vehicle_age" placeholder="e.g. 5" required>
+                </div>
+                <div class="input-group">
+                    <label for="c_km_driven">Kilometers Driven</label>
+                    <input type="number" id="c_km_driven" name="km_driven" placeholder="e.g. 45000" required>
+                </div>
+                <div class="input-group">
+                    <label for="c_selling_price">Actual Selling Price (Rs.)</label>
+                    <input type="number" id="c_selling_price" name="selling_price" placeholder="e.g. 550000" required style="border: 2px solid var(--accent-2);">
+                </div>
+                <!-- Simplified for now, or I can add more fields if needed -->
+                <div class="form-actions" style="grid-column: 1 / -1;">
+                    <button type="submit" class="btn btn-primary" id="btn-contribute">
+                        <span>Contribute Listing</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><title>Icon</title><path d="M12 5v14M5 12h14"/></svg>
+                    </button>
+                </div>
+            </form>
+            <div id="contribute-success" class="success-message" style="display:none; margin-top: 20px; color: var(--accent-2); text-align: center;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><title>Icon</title><polyline points="20 6 9 17 4 12"/></svg>
+                Thank you! Your contribution has been saved and will be used to retrain our AI.
+            </div>
+        </div>
 
     <!-- ========== HOW IT WORKS ========== -->
     <section class="section section-alt" id="how-it-works">
