@@ -62,6 +62,12 @@ def index():
     return render_template('index.html')
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    """Render custom 404 page."""
+    return render_template('404.html'), 404
+
+
 @app.route('/api/health', methods=['GET'])
 def health_check():
     """Health check endpoint for monitoring and deployment."""
