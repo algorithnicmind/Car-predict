@@ -4,10 +4,12 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=40&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&multiline=true&repeat=true&width=900&height=100&lines=%F0%9F%8F%8E%EF%B8%8F+Car+Price+Predictor" alt="Typing SVG" />
 </p>
 
-<p align="center">
+</p>
 
+<p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=400&size=18&duration=4000&pause=800&color=A78BFA&center=true&vCenter=true&repeat=true&width=700&height=30&lines=Linear+Regression+%E2%9A%94%EF%B8%8F+Random+Forest+%E2%80%94+Who+wins%3F;Predict+used+car+prices+with+ML+%F0%9F%A4%96;Built+with+Python+%2B+Scikit-Learn+%F0%9F%90%8D" alt="Typing SVG" />
 </p>
+
 
 <br/>
 
@@ -221,8 +223,8 @@ The Random Forest reveals which features matter most for pricing:
    9.    seller_type_Individual           █                     Low
 ```
 
-
 > **Key Insight:** `vehicle_age` and `max_power` are the two most important predictors — together they explain a large portion of the price variance.
+
 
 </details>
 
@@ -324,8 +326,8 @@ Car-predict/
 └── 📖 README.md               # You are here! ✨
 ```
 
-
 <br/>
+
 
 ---
 
@@ -344,6 +346,7 @@ Car-predict/
 | 📂 **Git / GitHub** | Version control     | —       |
 
 <br/>
+
 ---
 
 ## 🗺️ Roadmap
@@ -375,8 +378,8 @@ Contributions are welcome! Here's how you can help:
 5. 🔃 Open a Pull Request
 ```
 
-
 <details>
+
 <summary><b>💡 Ideas for Contributions</b></summary>
 
 <br/>
