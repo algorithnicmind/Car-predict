@@ -307,7 +307,51 @@
         });
     }
 
+    // ── Contribute Data ──
+    const contributeForm = document.getElementById('contribute-form');
+    const contributeSuccess = document.getElementById('contribute-success');
+    if (contributeForm) {
+        contributeForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(contributeForm);
+            const data = {};
+            formData.forEach((value, key) => {
+                // Convert numbers
+                if (['vehicle_age', 'km_driven', 'mileage', 'engine', 'max_power', 'seats', 'selling_price'].includes(key)) {
+                    data[key] = parseFloat(value);
+                } else {
+                    data[key] = value;
+                }
+            });
+
+            try {
+                const response = await fetch('/api/contribute', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+
+                if (response.ok) {
+                    contributeForm.style.display = 'none';
+                    contributeSuccess.style.display = 'flex';
+                    contributeForm.reset();
+                    setTimeout(() => {
+                        contributeForm.style.display = 'grid';
+                        contributeSuccess.style.display = 'none';
+                    }, 5000);
+                } else {
+                    alert('Error: ' + result.error);
+                }
+            } catch (error) {
+                console.error('Contribution failed:', error);
+                alert('Failed to send contribution. Please try again.');
+            }
+        });
+    }
+
     // ── Init ──
+
     loadMetadata();
 
 })();
