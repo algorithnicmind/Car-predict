@@ -52,6 +52,16 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/api/health', methods=['GET'])
+def health_check():
+    """Health check endpoint for monitoring and deployment."""
+    return jsonify({
+        'status': 'healthy',
+        'model_loaded': model is not None,
+        'model_accuracy': MODEL_METRICS.get('r2_percentage', 'N/A'),
+    })
+
+
 @app.route('/api/metadata', methods=['GET'])
 def get_metadata():
     """Return model metadata (feature info, stats, etc.) for the frontend."""
