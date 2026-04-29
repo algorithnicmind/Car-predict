@@ -1,0 +1,87 @@
+{
+  "numerical_features": [
+    "vehicle_age",
+    "km_driven",
+    "mileage",
+    "engine",
+    "max_power",
+    "seats"
+  ],
+  "categorical_features": {
+    "fuel_type": [
+      "CNG",
+      "Diesel",
+      "Electric",
+      "LPG",
+      "Petrol"
+    ],
+    "transmission_type": [
+      "Automatic",
+      "Manual"
+    ],
+    "seller_type": [
+      "Dealer",
+      "Individual",
+      "Trustmark Dealer"
+    ]
+  },
+  "feature_stats": {
+    "vehicle_age": {
+      "min": 0.0,
+      "max": 29.0,
+      "mean": 6.04,
+      "median": 6.0
+    },
+    "km_driven": {
+      "min": 100.0,
+      "max": 3800000.0,
+      "mean": 55616.48,
+      "median": 50000.0
+    },
+    "mileage": {
+      "min": 4.0,
+      "max": 33.54,
+      "mean": 19.7,
+      "median": 19.67
+    },
+    "engine": {
+      "min": 793.0,
+      "max": 6592.0,
+      "mean": 1486.06,
+      "median": 1248.0
+    },
+    "max_power": {
+      "min": 38.4,
+      "max": 626.0,
+      "mean": 100.59,
+      "median": 88.5
+    },
+    "seats": {
+      "min": 0.0,
+      "max": 9.0,
+      "mean": 5.33,
+      "median": 5.0
+    }
+  },
+  "model_metrics": {
+    "r2_score": 0.9265,
+    "r2_percentage": 92.65,
+    "mae": 105224.59,
+    "rmse": 235292.86
+  },
+  "model_columns": [
+    "vehicle_age",
+    "km_driven",
+    "mileage",
+    "engine",
+    "max_power",
+    "seats",
+    "fuel_type_Diesel",
+    "fuel_type_Electric",
+    "fuel_type_LPG",
+    "fuel_type_Petrol",
+    "transmission_type_Manual",
+    "seller_type_Individual",
+    "seller_type_Trustmark Dealer"
+  ]
+}
