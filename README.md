@@ -4,8 +4,8 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=40&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&multiline=true&repeat=true&width=900&height=100&lines=%F0%9F%8F%8E%EF%B8%8F+Car+Price+Predictor" alt="Typing SVG" />
 </p>
 
-
 <p align="center">
+
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=400&size=18&duration=4000&pause=800&color=A78BFA&center=true&vCenter=true&repeat=true&width=700&height=30&lines=Linear+Regression+%E2%9A%94%EF%B8%8F+Random+Forest+%E2%80%94+Who+wins%3F;Predict+used+car+prices+with+ML+%F0%9F%A4%96;Built+with+Python+%2B+Scikit-Learn+%F0%9F%90%8D" alt="Typing SVG" />
 </p>
 
@@ -62,8 +62,8 @@ This project takes real-world used car listings and builds a complete ML pipelin
 📥 Load Data → 🧹 Clean → 🔧 Feature Engineer → 🎯 Train → 📊 Evaluate → 🏆 Compare
 ```
 
-
-The script outputs a head-to-head comparison of both models with metrics like **R² Score**, **MAE**, and **RMSE**, plus a detailed **feature importance** analysis from the Random Forest.
+The script outputs a head-to-head comparison
+ of both models with metrics like **R² Score**, **MAE**, and **RMSE**, plus a detailed **feature importance** analysis from the Random Forest.
 
 <br/>
 
@@ -271,8 +271,9 @@ python predict_model.py
 
 <br/>
 
-```
+```text
 ======================================================================
+
    🚗  CAR PRICE PREDICTION — Model Comparison
 ======================================================================
 
@@ -343,7 +344,6 @@ Car-predict/
 | 📂 **Git / GitHub** | Version control     | —       |
 
 <br/>
-
 ---
 
 ## 🗺️ Roadmap
@@ -360,8 +360,6 @@ Car-predict/
 - [ ] 💾 Save trained models with joblib / pickle
 - [ ] 🐳 Dockerize the project
 - [ ] 🚀 Deploy as a REST API
-
-<br/>
 
 ---
 
@@ -392,8 +390,6 @@ Contributions are welcome! Here's how you can help:
 
 </details>
 
-<br/>
-
 ---
 
 ## 📜 License
@@ -406,9 +402,6 @@ Copyright 2025 algorithnicmind
 Licensed under the Apache License, Version 2.0
 You may not use this file except in compliance with the License.
 ```
-
-
-<br/>
 
 ---
 
