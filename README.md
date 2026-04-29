@@ -6,7 +6,7 @@
 
 <p align="center">
 
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=400&size=18&duration=4000&pause=800&color=A78BFA&center=true&vCenter=true&repeat=true&width=700&height=30&lines=Linear+Regression+%E2%9A%94%EF%B8%8F+Random+Forest+%E2%80%94+Who+wins%3F;Predict+used+car+prices+with+ML+%F0%9F%A4%96;Built+with+Python+%2B+Scikit-Learn+%F0%9F%90%8D" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=400&size=18&duration=4000&pause=800&color=A78BFA&center=true&vCenter=true&repeat=true&width=700&height=30&lines=AI-Powered+Used+Car+Price+Prediction+%F0%9F%A4%96;Beautiful+Web+Interface+with+Flask+%F0%9F%8C%90;Random+Forest+ML+%E2%80%94+92.65%25+Accuracy+%F0%9F%8E%AF;Built+with+Python+%2B+Scikit-Learn+%F0%9F%90%8D" alt="Typing SVG" />
 </p>
 
 <br/>
@@ -14,6 +14,7 @@
 <p align="center">
 
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/></a>
+  <a href="https://flask.palletsprojects.com/"><img src="https://img.shields.io/badge/Flask-3.x-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask"/></a>
   <a href="https://scikit-learn.org/"><img src="https://img.shields.io/badge/Scikit--Learn-Latest-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-Learn"/></a>
   <a href="https://pandas.pydata.org/"><img src="https://img.shields.io/badge/Pandas-Latest-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"/></a>
   <a href="https://numpy.org/"><img src="https://img.shields.io/badge/NumPy-Latest-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy"/></a>
@@ -34,18 +35,19 @@
 
 <p align="center">
 
-| 🔗 Section                                  | Description                 |
-| :------------------------------------------ | :-------------------------- |
-| [✨ Overview](#-overview)                   | What this project does      |
-| [🏗️ Architecture](#️-architecture)           | How the pipeline works      |
-| [📊 Features Used](#-features-used)         | Feature engineering details |
-| [🤖 Models](#-models)                       | ML models & hyperparameters |
-| [📈 Results](#-results)                     | Performance comparison      |
-| [🚀 Quick Start](#-quick-start)             | Get running in 60 seconds   |
-| [📁 Project Structure](#-project-structure) | Repository layout           |
-| [🛠️ Tech Stack](#️-tech-stack)               | Technologies used           |
-| [🤝 Contributing](#-contributing)           | How to contribute           |
-| [📜 License](#-license)                     | Apache 2.0                  |
+| 🔗 Section                                  | Description                   |
+| :------------------------------------------ | :---------------------------- |
+| [✨ Overview](#-overview)                   | What this project does        |
+| [🌐 Web Application](#-web-application)    | The prediction web interface  |
+| [🏗️ Architecture](#️-architecture)           | How the pipeline works        |
+| [📊 Features Used](#-features-used)         | Feature engineering details   |
+| [🤖 Model](#-model)                         | Random Forest details         |
+| [📈 Results](#-results)                     | Model performance             |
+| [🚀 Quick Start](#-quick-start)             | Get running in 60 seconds     |
+| [📁 Project Structure](#-project-structure) | Repository layout             |
+| [🛠️ Tech Stack](#️-tech-stack)               | Technologies used             |
+| [🤝 Contributing](#-contributing)           | How to contribute             |
+| [📜 License](#-license)                     | Apache 2.0                    |
 
 </p>
 
@@ -55,16 +57,43 @@
 
 ## ✨ Overview
 
-> **Predict the selling price of a used car** using data from the **CarDekho** dataset — then pit **Linear Regression** against **Random Forest** to find the champion model. 🏆
+> **Predict the current market price of any used car** using an AI-powered web application built with Flask and Random Forest ML — trained on **15,000+ real market listings** from CarDekho. 🏆
 
-This project takes real-world used car listings and builds a complete ML pipeline:
+This is a **full-stack machine learning web application** where users can:
+
+1. 🌐 Open the web interface in their browser
+2. 📝 Enter car details (age, mileage, engine, fuel type, etc.)
+3. 🤖 Get an instant AI-powered price prediction
+4. 💰 See the estimated market value displayed beautifully
 
 ```text
-📥 Load Data → 🧹 Clean → 🔧 Feature Engineer → 🎯 Train → 📊 Evaluate → 🏆 Compare
+📥 Load Data → 🧹 Clean → 🔧 Feature Engineer → 🎯 Train → 💾 Save Model → 🌐 Serve via Flask → 💰 Predict
 ```
 
-The script outputs a head-to-head comparison
- of both models with metrics like **R² Score**, **MAE**, and **RMSE**, plus a detailed **feature importance** analysis from the Random Forest.
+<br/>
+
+---
+
+## 🌐 Web Application
+
+The project includes a **premium, professional web interface** built with HTML, CSS, and JavaScript, served by a Flask backend.
+
+### ✨ Key Features
+
+- 🎨 **Modern Dark Theme** with glassmorphism and gradient accents
+- ⚡ **Instant Predictions** — results appear in under 1 second
+- 📱 **Fully Responsive** — works on desktop, tablet, and mobile
+- 🔄 **Dynamic Form** — dropdowns and hints auto-populated from model metadata
+- 📊 **Model Stats Dashboard** — live R², MAE, and RMSE metrics displayed
+- ✨ **Micro-Animations** — smooth transitions, scroll effects, and hover states
+
+### 🖥️ How to Use
+
+1. Start the Flask server (see [Quick Start](#-quick-start))
+2. Open `http://localhost:5000` in your browser
+3. Fill in the car details form
+4. Click **"Predict Price"**
+5. View the estimated market price instantly!
 
 <br/>
 
@@ -78,11 +107,10 @@ flowchart LR
     B --> C["🔧 Feature Engineering\n6 numeric + 3 categorical"]
     C --> D["🔢 One-Hot Encoding\nCategorical → binary flags"]
     D --> E["✂️ Train/Test Split\n80% / 20%"]
-    E --> F["📐 Linear Regression"]
-    E --> G["🌲 Random Forest\n100 trees"]
-    F --> H["📊 Evaluate & Compare\nR² · MAE · RMSE"]
-    G --> H
-    H --> I["🏆 Winner + Feature Importance"]
+    E --> F["🌲 Random Forest\n100 trees"]
+    F --> G["💾 Save Model\nmodel.pkl + metadata"]
+    G --> H["🌐 Flask Web App\nServe predictions via API"]
+    H --> I["💰 User Gets\nPredicted Price"]
 ```
 
 <br/>
@@ -126,39 +154,9 @@ The model uses **9 features** (6 numerical + 3 categorical) to predict the `sell
 
 ---
 
-## 🤖 Models
+## 🤖 Model
 
-<table>
-<tr>
-<td width="50%">
-
-### 📐 Linear Regression
-
-A classic approach that assumes a **linear relationship** between features and selling price.
-
-```python
-LinearRegression()
-# Fits a hyperplane through the data
-# Fast training, interpretable coefficients
-```
-
-**Strengths:**
-
-- ⚡ Blazing fast training
-- 📖 Highly interpretable
-- 🧮 Mathematically elegant
-
-**Weaknesses:**
-
-- ❌ Can't capture non-linear patterns
-- ❌ Sensitive to outliers
-
-</td>
-<td width="50%">
-
-### 🌲 Random Forest
-
-An **ensemble** of 100 decision trees that collectively vote on the predicted price.
+> The project uses a **Random Forest Regressor** — an ensemble of 100 decision trees that was selected as the best-performing model.
 
 ```python
 RandomForestRegressor(
@@ -170,36 +168,12 @@ RandomForestRegressor(
 )
 ```
 
-**Strengths:**
+**Why Random Forest?**
 
-- ✅ Captures non-linear relationships
-- ✅ Robust to outliers
-- ✅ Built-in feature importance
-
-**Weaknesses:**
-
-- 🐢 Slower training
-- 📦 Larger model size
-
-</td>
-</tr>
-</table>
-
-<br/>
-
----
-
-## 📈 Results
-
-> 🏆 **Random Forest** dominates Linear Regression across all metrics!
-
-| Metric       | 📐 Linear Regression | 🌲 Random Forest | Winner |
-| :----------- | :------------------: | :--------------: | :----: |
-| **R² Score** |        ~0.65         |      ~0.94       |   🌲   |
-| **MAE**      |        Higher        |   **Lower** ✅   |   🌲   |
-| **RMSE**     |        Higher        |   **Lower** ✅   |   🌲   |
-
-> _Exact numbers depend on dataset version. Run the script to see your real-time results!_
+- ✅ Captures non-linear relationships between features and price
+- ✅ Robust to outliers in the dataset
+- ✅ Built-in feature importance ranking
+- ✅ Achieves **92.65% R² accuracy** on test data
 
 <details>
 <summary><b>🌲 Feature Importance Analysis</b> — Click to reveal</summary>
@@ -225,6 +199,24 @@ The Random Forest reveals which features matter most for pricing:
 > **Key Insight:** `vehicle_age` and `max_power` are the two most important predictors — together they explain a large portion of the price variance.
 
 </details>
+
+<br/>
+
+---
+
+## 📈 Results
+
+> 🏆 **Random Forest** achieves **92.65% R² accuracy** on the test set!
+
+| Metric                       | Value         |
+| :--------------------------- | :-----------: |
+| **R² Score**                 | 0.9265        |
+| **R² Percentage**            | 92.65%        |
+| **Mean Absolute Error (MAE)**| Rs. 1,05,225  |
+| **Root Mean Sq Error (RMSE)**| Rs. 2,35,293  |
+| **Training Samples**         | 12,328        |
+| **Testing Samples**          | 3,083         |
+| **Decision Trees**           | 100           |
 
 <br/>
 
@@ -260,54 +252,28 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Run the Prediction
+### Train the Model
 
 ```bash
-# 🏎️ Run the model comparison
+# 🧠 Train the Random Forest model (saves model.pkl + model_metadata.json)
+python train_model.py
+```
+
+### Launch the Web App
+
+```bash
+# 🌐 Start the Flask web server
+python app.py
+
+# Open http://localhost:5000 in your browser 🎉
+```
+
+### Run the CLI Comparison (Optional)
+
+```bash
+# 📊 Run the original model comparison script
 python predict_model.py
 ```
-
-<details>
-<summary><b>🖥️ Expected Output Preview</b> — Click to see</summary>
-
-<br/>
-
-```text
-======================================================================
-
-   🚗  CAR PRICE PREDICTION — Model Comparison
-======================================================================
-
-✅ Dataset loaded successfully!
-   Rows: 7,906  |  Columns: 13
-
-──────────────────────────────────────────────────────────────────────
-  STEP 6: Training Models
-──────────────────────────────────────────────────────────────────────
-
-📐 Training Linear Regression …
-   ✅ Linear Regression trained.
-
-🌲 Training Random Forest (100 trees) …
-   ✅ Random Forest trained.
-
-======================================================================
-          📊  MODEL COMPARISON RESULTS
-======================================================================
-
-Metric                         Linear Regression        Random Forest
-──────────────────────────────────────────────────────────────────────
-R² Score                                0.6XXX              0.9XXX
-Mean Absolute Error (MAE)            ₹X,XX,XXX           ₹X,XX,XXX
-Root Mean Sq Error (RMSE)            ₹X,XX,XXX           ₹X,XX,XXX
-
-🏆 Winner: Random Forest  (+XX.XX% R² improvement)
-
-   ✅ Done! Both models trained and compared successfully.
-======================================================================
-```
-
-</details>
 
 <br/>
 
@@ -318,11 +284,24 @@ Root Mean Sq Error (RMSE)            ₹X,XX,XXX           ₹X,XX,XXX
 ```text
 Car-predict/
 │
-├── 📄 predict_model.py      # Main ML pipeline (train, evaluate, compare)
-├── 📊 car_data.csv           # CarDekho used car dataset (~8K records)
-├── 📋 requirements.txt       # Python dependencies
-├── 📜 LICENSE                 # Apache License 2.0
-└── 📖 README.md               # You are here! ✨
+├── 🌐 app.py                  # Flask web application (backend)
+├── 🧠 train_model.py          # Model training & saving script
+├── 📊 predict_model.py        # CLI model comparison (LR vs RF)
+├── 📊 car_data.csv            # CarDekho used car dataset (~15K records)
+├── 🤖 model.pkl               # Trained Random Forest model
+├── 📋 model_metadata.json     # Feature metadata for the frontend
+├── 📋 requirements.txt        # Python dependencies
+├── 📜 LICENSE                  # Apache License 2.0
+├── 📖 README.md                # You are here! ✨
+│
+├── 📁 templates/
+│   └── index.html             # Main HTML frontend page
+│
+└── 📁 static/
+    ├── 📁 css/
+    │   └── style.css          # Premium dark-theme stylesheet
+    └── 📁 js/
+        └── app.js             # Frontend JavaScript logic
 ```
 
 <br/>
@@ -333,16 +312,19 @@ Car-predict/
 
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,sklearn,github,vscode&theme=dark" alt="Tech Stack Icons" />
+  <img src="https://skillicons.dev/icons?i=python,flask,html,css,js,sklearn,github,vscode&theme=dark" alt="Tech Stack Icons" />
 </p>
 
-| Technology          | Role                | Version |
-| :------------------ | :------------------ | :------ |
-| 🐍 **Python**       | Core language       | 3.10+   |
-| 🧠 **Scikit-Learn** | ML models & metrics | Latest  |
-| 🐼 **Pandas**       | Data manipulation   | Latest  |
-| 🔢 **NumPy**        | Numerical computing | Latest  |
-| 📂 **Git / GitHub** | Version control     | —       |
+| Technology          | Role                     | Version |
+| :------------------ | :----------------------- | :------ |
+| 🐍 **Python**       | Core language            | 3.10+   |
+| 🌐 **Flask**        | Web framework (backend)  | 3.x     |
+| 🧠 **Scikit-Learn** | ML model & metrics       | Latest  |
+| 🐼 **Pandas**       | Data manipulation        | Latest  |
+| 🔢 **NumPy**        | Numerical computing      | Latest  |
+| 💾 **Joblib**       | Model serialization      | Latest  |
+| 🎨 **HTML/CSS/JS**  | Frontend interface       | —       |
+| 📂 **Git / GitHub** | Version control          | —       |
 
 <br/>
 
@@ -352,16 +334,17 @@ Car-predict/
 
 - [x] 🧹 Data cleaning pipeline
 - [x] 📐 Linear Regression model
-- [x] 🌲 Random Forest model
-- [x] 📊 Head-to-head model comparison
+- [x] 🌲 Random Forest model (92.65% accuracy)
+- [x] 📊 Head-to-head model comparison (CLI)
 - [x] 🌲 Feature importance analysis
 - [x] 🔮 Single car prediction example
+- [x] 💾 Save trained model with joblib
+- [x] 🌐 Build a Flask web UI with professional design
+- [x] 🔗 Connect frontend ↔ backend via REST API
 - [ ] 📈 Add data visualizations (matplotlib / seaborn)
-- [ ] 🌐 Build a Streamlit / Flask web UI
 - [ ] 🧪 Add XGBoost / Gradient Boosting models
-- [ ] 💾 Save trained models with joblib / pickle
 - [ ] 🐳 Dockerize the project
-- [ ] 🚀 Deploy as a REST API
+- [ ] 🚀 Deploy to cloud (Render / Railway / AWS)
 
 ---
 
@@ -385,9 +368,9 @@ Contributions are welcome! Here's how you can help:
 
 - 📊 Add data visualization charts (price distributions, correlation heatmaps)
 - 🧪 Implement additional ML models (XGBoost, LightGBM, Neural Networks)
-- 🌐 Build an interactive web app using Streamlit or Gradio
-- 📝 Add unit tests and CI/CD pipeline
 - 🐳 Create a Dockerfile for containerization
+- 📝 Add unit tests and CI/CD pipeline
+- 🚀 Deploy to a cloud platform
 - 📚 Expand documentation with Jupyter notebooks
 
 </details>
