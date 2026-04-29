@@ -1,6 +1,9 @@
+# 🏎️ Car Price Predictor
+
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=40&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&multiline=true&repeat=true&width=900&height=100&lines=%F0%9F%8F%8E%EF%B8%8F+Car+Price+Predictor" alt="Typing SVG" />
 </p>
+
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=400&size=18&duration=4000&pause=800&color=A78BFA&center=true&vCenter=true&repeat=true&width=700&height=30&lines=Linear+Regression+%E2%9A%94%EF%B8%8F+Random+Forest+%E2%80%94+Who+wins%3F;Predict+used+car+prices+with+ML+%F0%9F%A4%96;Built+with+Python+%2B+Scikit-Learn+%F0%9F%90%8D" alt="Typing SVG" />
@@ -55,9 +58,10 @@
 
 This project takes real-world used car listings and builds a complete ML pipeline:
 
-```
+```text
 📥 Load Data → 🧹 Clean → 🔧 Feature Engineer → 🎯 Train → 📊 Evaluate → 🏆 Compare
 ```
+
 
 The script outputs a head-to-head comparison of both models with metrics like **R² Score**, **MAE**, and **RMSE**, plus a detailed **feature importance** analysis from the Random Forest.
 
@@ -203,7 +207,7 @@ RandomForestRegressor(
 
 The Random Forest reveals which features matter most for pricing:
 
-```
+```text
   Rank   Feature                          Importance
   ──────────────────────────────────────────────────
    1.    vehicle_age                      ████████████████████  High
@@ -216,6 +220,7 @@ The Random Forest reveals which features matter most for pricing:
    8.    fuel_type_Petrol                 ██                    Low
    9.    seller_type_Individual           █                     Low
 ```
+
 
 > **Key Insight:** `vehicle_age` and `max_power` are the two most important predictors — together they explain a large portion of the price variance.
 
@@ -308,7 +313,7 @@ Root Mean Sq Error (RMSE)            ₹X,XX,XXX           ₹X,XX,XXX
 
 ## 📁 Project Structure
 
-```
+```text
 Car-predict/
 │
 ├── 📄 predict_model.py      # Main ML pipeline (train, evaluate, compare)
@@ -317,6 +322,7 @@ Car-predict/
 ├── 📜 LICENSE                 # Apache License 2.0
 └── 📖 README.md               # You are here! ✨
 ```
+
 
 <br/>
 
@@ -363,13 +369,14 @@ Car-predict/
 
 Contributions are welcome! Here's how you can help:
 
-```
+```bash
 1. 🍴 Fork this repository
 2. 🌿 Create a feature branch    →  git checkout -b feature/amazing-feature
 3. 💾 Commit your changes        →  git commit -m "Add amazing feature"
 4. 🚀 Push to the branch         →  git push origin feature/amazing-feature
 5. 🔃 Open a Pull Request
 ```
+
 
 <details>
 <summary><b>💡 Ideas for Contributions</b></summary>
@@ -393,12 +400,13 @@ Contributions are welcome! Here's how you can help:
 
 This project is licensed under the **Apache License 2.0** — see the [`LICENSE`](./LICENSE) file for details.
 
-```
+```text
 Copyright 2025 algorithnicmind
 
 Licensed under the Apache License, Version 2.0
 You may not use this file except in compliance with the License.
 ```
+
 
 <br/>
 
