@@ -253,6 +253,15 @@
         });
     });
 
+    // ── Reset button handler ──
+    const btnReset = document.getElementById('btn-reset');
+    if (btnReset) {
+        btnReset.addEventListener('click', function () {
+            resultContainer.classList.remove('show');
+            errorContainer.classList.remove('show');
+        });
+    }
+
     // ── Init ──
     loadMetadata();
 
