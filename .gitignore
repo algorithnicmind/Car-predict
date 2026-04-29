@@ -1,0 +1,49 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+
+# ===== IDE / Editor =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ===== OS =====
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+._*
+
+# ===== ML / Data Science =====
+# Trained models
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.pth
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# ===== Misc =====
+*.log
+*.env
+.env
